@@ -1,0 +1,17 @@
+export const elementos = {
+    URL: "https://www.petz.com.br/",
+    campoPesquisa: '[id="search"]',
+    produto: '[class="ptz-card-label-left"]',
+    botaoAdicionarItem: '[class="btn btn-add-to-cart"]',
+    validadorSacola: "Sacola",
+    botaoAumentarQuantidade: '[class="mdi mdi-plus"]', 
+    validadorItens: "itens",
+    botaoDiminuirQuantidade: '[class="mdi mdi-minus"]',
+    botaoFinalizarCompra:'[id="cartButtonConfirm"]',
+    validadorLogin: "Acesse sua conta",
+    campoUsuario: '[id="loginEmail"]',
+    campoSenha: '[id="loginPassword"]',
+    valorUsuario: "teste@teste.com.br",
+    valorSenha: 123456,
+    validadorLogin: "Dados incorretos!",
+}
