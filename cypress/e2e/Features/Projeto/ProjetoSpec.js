@@ -8,61 +8,61 @@ Given("que o usuario esta no site", function () {
     cy.visit(URL);
 });
 When("ele pesquisa por Biofresh", function () {
-    cy.get(elementosSite.campoPesquisa).type("Biofresh").type("{ENTER}");
+    cy.get(elementosSite.campoPesquisa).click().type(elementosSite.nomeProduto).type("{ENTER}");
 });
 Then("o produto e exibido", function () {
-    cy.get(elementosSite.produto).should("be.visible");
+    cy.contains(elementosSite.validadorProduto, {timeout: 5000}).should("be.visible");
 });
 
-Given("que o usuario selecinou o produto desejado", function () {
-    cy.get(elementosSite.produto).type("{ENTER}");
+Given("que o usuario selecina o produto", function () {
+    cy.get(elementosSite.linkProduto).click();
 });
-When("ele adiciona o item no carrinho", function () {
-    cy.get(elementosSite.botaoAdicionarItem).type("{ENTER}");
+When("ele adiciona o produto no carrinho", function () {
+    cy.get(elementosSite.botaoAdicionarItem).click();
 });
-Then("a sacola e aberta automaticamente", function () {
-    cy.get(elementosSite.validadorSacola).should("be.visible")
+Then("e aberto um pop up para o carrinho", function () {
+    cy.contains(elementosSite.validadorCarrinho, {timeout: 5000}).should("be.visible")
 });
 
 Given("que o usuario esta no carrinho", function () {
-    cy.get(elementosSite.validadorSacola).should("be.visible")
+    cy.contains(elementosSite.validadorCarrinho).should("be.visible")
 });
-When("ele altera a quantidade de um item do carrinho", function () {
-    cy.get(elementosSite.botaoAumentarQuantidade).type("{ENTER}");
+When("ele adiciona mais um item no carrinho", function () {
+    cy.get(elementosSite.botaoAumentarQuantidade).click();
 });
 Then("a quantidade de itens e alterada", function () {
-    cy.get(elementosSite.validadorItens).should("be.visible");
+    cy.contains(elementosSite.validadorQuantidadeMaior, {timeout: 5000}).should("be.visible");
 });
 
 Given("que o usuario esta no carrinho", function () {
-    cy.get(elementosSite.validadorSacola).should("be.visible")
+    cy.contains(elementosSite.validadorCarrinho).should("be.visible")
 });
 When("ele remove um item do carrinho", function () {
-    cy.get(elementosSite.botaoDiminuirQuantidade).type("{ENTER}");
+    cy.get(elementosSite.botaoDiminuirQuantidade).click();
 });
 Then("a quantidade de itens e alterada", function () {
-    cy.get(elementosSite.validadorItens).should("not.be.visible");
+    cy.contains(elementosSite.validadorQuantidadeMenor, {timeout: 5000}).should("not.be.visible");
 });
 
 Given("que o usuario esta no carrinho", function () {
-    cy.get(elementosSite.validadorSacola).should("be.visible")
+    cy.contains(elementosSite.validadorCarrinho).should("be.visible")
 });
 When("ele finaliza a compra", function () {
-    cy.get(elementosSite.botaoFinalizarCompra).type("{ENTER}");
+    cy.get(elementosSite.botaoFinalizarCompra).click();
 });
 Then("a tela de login e aberta", function () {
-    cy.get(elementosSite.validadorLogin).should("be.visible");
+    cy.contains(elementosSite.validadorLogin, {timeout: 5000}).should("be.visible");
 });
 
 Given("que o usuario esta na tela de login", function () {
-    cy.get(elementosSite.validadorLogin).should("be.visible");
+    cy.contains(elementosSite.validadorLogin).should("be.visible");
 });
 When("ele entra com o usuario e a senha incorretos", function () {
-    cy.get(elementosSite.campoUsuario).type("{ENTER}").type(valorUsuario);
-    cy.get(elementosSite.campoSenha).type("{ENTER}").type(valorSenha);
+    cy.get(elementosSite.camposLogin).click().type(valorUsuario);
+    cy.get(elementosSite.camposLogin).click().type(valorSenha);
 });
 Then("o login nao e realizado", function () {
-    cy.get(elementosSite.validadorLogin).should(be.visible);
+    cy.contains(elementosSite.validadorLogin, {timeout: 5000}).should(be.visible);
 });
 
 

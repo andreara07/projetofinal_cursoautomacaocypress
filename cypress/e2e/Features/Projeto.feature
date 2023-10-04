@@ -1,19 +1,19 @@
-Feature: Testar o site da Petz
+Feature: Testar o site da Cobasi
 
     Scenario: Busca de item
-        Given que o usuario esta no site da Petz
+        Given que o usuario esta no site 
         When ele pesquisa por Biofresh
         Then o produto e exibido
 
     Scenario: Adicao de um item no carrinho
-        Given que o usuario selecinou o produto desejado
-        When ele adiciona o item no carrinho
-     Then a sacola e aberta automaticamente
+        Given que o usuario selecina o produto 
+        When ele adiciona o produto no carrinho
+        Then e aberto um pop up para o carrinho
 
     Scenario: Alteracao de quantidade de um item do carrinho
         Given que o usuario esta no carrinho
-        When ele altera a quantidade de um item do carrinho
-        Then o valor total e recalculado
+        When ele adiciona mais um item no carrinho
+        Then a quantidade de itens e alterada
 
     Scenario: Remocao de um item do carrinho
         Given que o usuario esta no carrinho
