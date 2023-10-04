@@ -1,4 +1,4 @@
-describe('Testar o site da Petz', () => {
+describe('Testar o site da Cobasi', () => {
     beforeEach(() => {
         cy.visit('https://www.cobasi.com.br/', {timeout: 20000});
     })
