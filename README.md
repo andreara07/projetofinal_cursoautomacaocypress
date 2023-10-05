@@ -15,9 +15,9 @@ Passo a passo para a execução dos testes através do Visual Code Studio:
 1. Acessar o repositório do GitHub;
 2. Selecionar a opção <b>Code</b> e copiar o <b>HTTPS</b>;
 3. Abrir o terminal do Visual Code Studio e inserir o comando <b><i>git clone</b></i> e o <b>HTTPS</b> copiado;
-4. Após o término do comando inserir no terminal o comando <b><i>npx cypress open</b></i> para a abertura do Cypress;
-5. Selecionar E2E Testing;
-6. Selecioar o navagador desejado;
+4. Após o término da execução do comando, inserir no terminal o comando <b><i>npx cypress open</b></i> para a abertura do Cypress;
+5. Selecionar <b>E2E Testing</b>;
+6. Selecionar o navagador desejado;
 7. Selecionar o arquivo <b>Projeto.cy.js</b>.
 
 Após os passos acima os testes serão executados automaticamente.
